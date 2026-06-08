@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+/* This ensures html2canvas calculates character widths correctly */
+#resume-preview * {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+}
+@layer base {
+  :root {
+    /* Manually override the background to use standard RGB */
+    --background: 248, 250, 252; /* #F8FAFC */
+    --foreground: 15, 23, 42;    /* #0F172A */
+  }
+}
+/* This ensures the body takes up the full screen height */
+:root, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* Prevent text overlapping in html2canvas exports */
+#resume-preview * {
+  letter-spacing: normal !important;
+  word-spacing: normal !important;
+  text-rendering: optimizeLegibility !important;
+}
+
+/* Ensure images and backgrounds render correctly */
+#resume-preview {
+  display: block !important;
+}
